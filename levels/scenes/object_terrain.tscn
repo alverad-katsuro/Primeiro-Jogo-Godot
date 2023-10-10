@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cci83x3jn7yo6"]
+
+[ext_resource type="Texture2D" uid="uid://cx30xtueih0an" path="res://world/assets/objects/objects.png" id="1_qcsr1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dso10"]
+texture = ExtResource("1_qcsr1")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+0:5/0/texture_origin = Vector2i(0, 20)
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.75, -7.5, 11.875, -7.375, 11.75, 7.75, -11.875, 7.5)
+6:7/size_in_atlas = Vector2i(2, 2)
+6:7/0 = 0
+6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/0/physics_layer_0/angular_velocity = 0.0
+10:7/size_in_atlas = Vector2i(2, 2)
+10:7/0 = 0
+10:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:7/0/physics_layer_0/angular_velocity = 0.0
+11:2/size_in_atlas = Vector2i(1, 2)
+11:2/0 = 0
+11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:2/0/physics_layer_0/angular_velocity = 0.0
+10:0/size_in_atlas = Vector2i(2, 1)
+10:0/0 = 0
+10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+8:6/size_in_atlas = Vector2i(2, 3)
+8:6/0 = 0
+8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_ucshj"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dso10")
+
+[node name="ObjectTerrain" type="TileMap"]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_ucshj")
+format = 2
+layer_0/y_sort_enabled = true
