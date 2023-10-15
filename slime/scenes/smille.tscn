@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://coe32riswx30a"]
+[gd_scene load_steps=12 format=3 uid="uid://coe32riswx30a"]
 
 [ext_resource type="Script" path="res://slime/smille.gd" id="1_c4isn"]
 [ext_resource type="Texture2D" uid="uid://c5tomdlunkx4d" path="res://slime/assets/slime.png" id="1_cdf0v"]
+[ext_resource type="Texture2D" uid="uid://cwdjd2qcbk56" path="res://character/assets/bar_ammo.png" id="3_sccr6"]
+[ext_resource type="Texture2D" uid="uid://bku28s2h6tv2n" path="res://character/assets/bar_ammo_progress.png" id="4_tkyjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fvoeq"]
 
@@ -104,10 +106,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_umcnm"]
 radius = 61.131
 
-[node name="Smille" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation") groups=["enemy"]]
+[node name="Smille" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation", "_barra_de_vida") groups=["enemy"]]
 script = ExtResource("1_c4isn")
 _texture = NodePath("Sprite2D")
 _animation = NodePath("AnimationPlayer")
+_barra_de_vida = NodePath("TextureProgressBar")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
@@ -131,6 +134,15 @@ show_behind_parent = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_umcnm")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 63.0
+offset_bottom = -16.0
+scale = Vector2(0.5157, 0.778507)
+texture_under = ExtResource("3_sccr6")
+texture_progress = ExtResource("4_tkyjw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered_alert"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited_alert"]

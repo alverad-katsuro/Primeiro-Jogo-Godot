@@ -10,20 +10,25 @@ var _is_attack = false
 @export var _friction: float = 0.6
 @export var _acceleration: float = 0.2
 @export var _attack_weapon: Array = [1,50]
-@export var _life: float = 1000.0;
+@export var _life_max: float = 1000.0;
+
+var _life: float = 1000.0;
 
 
 @export_category("Objects")
 @export var _animation_tree: AnimationTree = null
+@export var _barra_de_vida: TextureProgressBar = null
 
 
 func _ready():
 	_animation_tree.active = true
 	_state_machine = _animation_tree["parameters/playback"]
+	_life = _life_max
+	_barra_de_vida.max_value = _life_max
+	_barra_de_vida.value = _life_max
 
 
 func _physics_process(_delta: float) -> void:
-	print(_life)
 	if _life <= 0:
 		return
 	_move()
@@ -56,6 +61,7 @@ func _attack() -> void:
 
 
 func _animate() -> void:
+	
 	if _is_attack:
 		_state_machine.travel("attack")
 		return
@@ -78,6 +84,9 @@ func _on_attack_area_body_entered(_body: Node2D) -> void:
 
 func update_health(valor: float) -> void:
 	_life += valor;
+	_barra_de_vida.value = ceil(_life);
+	
 	if _life <= 0:
 		_state_machine.travel("dead")
+		_barra_de_vida.visible = false;
 		return

@@ -46,6 +46,7 @@ y_sort_enabled = true
 
 [node name="Character" parent="YSort" instance=ExtResource("2_l4est")]
 position = Vector2(648, 312)
+_life_max = 500.0
 
 [node name="ObjectTerrain" parent="YSort" instance=ExtResource("3_c28i5")]
 layer_0/tile_data = PackedInt32Array(589852, 0, 5, 589854, 0, 5, 786460, 0, 5, 786462, 0, 5, -131028, 0, 5, -65492, 1, 0, 524319, 1, 0, 1048579, 655360, 7, 196602, 655360, 7, 327684, 0, 0, 1114134, 0, 0, 1376287, 0, 1, 1179660, 0, 1, 1441785, 0, 1, 786452, 0, 1, 22, 0, 1, 9, 0, 1, -131071, 0, 1, 196651, 0, 1, 196652, 0, 1, 44, 0, 1, -6, 0, 5, 1048581, 0, 5, 1048577, 0, 5, 983043, 0, 5, 1179649, 0, 5, 1179653, 0, 5, 1310721, 0, 5, 1310725, 0, 5, 1114115, 1, 0)
@@ -53,29 +54,21 @@ layer_0/tile_data = PackedInt32Array(589852, 0, 5, 589854, 0, 5, 786460, 0, 5, 7
 [node name="Enemys" type="Node2D" parent="YSort"]
 
 [node name="Smille" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
-position = Vector2(609.931, 388.974)
+position = Vector2(658, 373)
 
-[node name="Smille2" parent="YSort/Enemys" node_paths=PackedStringArray("_texture", "_animation") instance=ExtResource("6_eq2b3")]
-position = Vector2(369, 348)
-_texture = NodePath("../Smille/Sprite2D")
-_animation = NodePath("../Smille/AnimationPlayer")
+[node name="Smille2" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
+position = Vector2(213, 155)
 
-[node name="Smille3" parent="YSort/Enemys" node_paths=PackedStringArray("_texture", "_animation") instance=ExtResource("6_eq2b3")]
-position = Vector2(16.1492, 355.524)
-_texture = NodePath("../Smille/Sprite2D")
-_animation = NodePath("../Smille/AnimationPlayer")
+[node name="Smille3" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
 
-[node name="Smille4" parent="YSort/Enemys" node_paths=PackedStringArray("_texture", "_animation") instance=ExtResource("6_eq2b3")]
-position = Vector2(176.76, 89.8012)
-_texture = NodePath("../Smille/Sprite2D")
-_animation = NodePath("../Smille/AnimationPlayer")
+[node name="Smille4" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
+position = Vector2(-39, 340)
 
-[node name="Smille5" parent="YSort/Enemys" node_paths=PackedStringArray("_texture", "_animation") instance=ExtResource("6_eq2b3")]
-position = Vector2(-41.0318, 76.3468)
-_texture = NodePath("../Smille/Sprite2D")
-_animation = NodePath("../Smille/AnimationPlayer")
+[node name="Smille" parent="." instance=ExtResource("6_eq2b3")]
+position = Vector2(55, 154)
 
-[node name="Smille6" parent="YSort/Enemys" node_paths=PackedStringArray("_texture", "_animation") instance=ExtResource("6_eq2b3")]
-position = Vector2(478.434, 41.8146)
-_texture = NodePath("../Smille/Sprite2D")
-_animation = NodePath("../Smille/AnimationPlayer")
+[node name="Smille" parent="Smille" instance=ExtResource("6_eq2b3")]
+position = Vector2(302, 220)
+
+[node name="Smille" parent="Smille/Smille" instance=ExtResource("6_eq2b3")]
+position = Vector2(274, -252)

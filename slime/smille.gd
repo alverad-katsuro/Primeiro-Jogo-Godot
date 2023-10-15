@@ -9,6 +9,7 @@ var _player_ref: Character = null
 @export var _texture: Sprite2D = null
 
 @export var _animation: AnimationPlayer = null
+@export var _barra_de_vida: TextureProgressBar = null
 
 
 @export_category("Variables")
@@ -16,7 +17,13 @@ var _player_ref: Character = null
 @export var _move_speed: float = 32.0
 
 @export var _attack_weapon: Array = [1,5]
-@export var _life: float = 100.0;
+@export var _life_max: float = 100.0;
+var _life: float = 100.0;
+
+func _ready():
+	_life = _life_max
+	_barra_de_vida.max_value = _life_max
+	_barra_de_vida.value = _life_max
 
 
 func _on_area_2d_body_entered_alert(_body: Node2D):
@@ -66,10 +73,12 @@ func _animate() -> void:
 	_animation.play("idle")
 
 func update_health(valor: float) -> void:
-	if _life <= 0:
+	if (_life <= 0):
 		return
 	else:	
 		_life += valor;
+		_barra_de_vida.value = ceil(_life);
 		if _life <= 0:
 			_animation.play("dead")
+			_barra_de_vida.visible = false;
 			return
