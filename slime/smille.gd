@@ -14,6 +14,13 @@ var _player_ref: Character = null
 
 @export_category("Variables")
 
+# Peer id.
+@export var peer_id : int : 
+	set(value):
+		peer_id = value
+		name = str(peer_id)
+		set_multiplayer_authority(peer_id)
+		
 @export var _move_speed: float = 32.0
 
 @export var _attack_weapon: Array = [1,5]
@@ -24,7 +31,12 @@ func _ready():
 	_life = _life_max
 	_barra_de_vida.max_value = _life_max
 	_barra_de_vida.value = _life_max
-
+	
+	# Set process functions for current player.
+	var is_local = is_multiplayer_authority()
+	set_process_input(is_local)
+	set_physics_process(is_local)
+	set_process(is_local)
 
 func _on_area_2d_body_entered_alert(_body: Node2D):
 	if _body.is_in_group("character"):

@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://buvexvmqnkw45"]
+[gd_scene load_steps=6 format=3 uid="uid://buvexvmqnkw45"]
 
 [ext_resource type="PackedScene" uid="uid://fbfhmr7gs77p" path="res://world/scenes/terrain.tscn" id="1_j4iyh"]
-[ext_resource type="PackedScene" uid="uid://dndjdakyrtr7g" path="res://character/scenes/character.tscn" id="2_l4est"]
 [ext_resource type="PackedScene" uid="uid://br30mhlb8evky" path="res://world/scenes/interior.tscn" id="2_n0e51"]
 [ext_resource type="PackedScene" uid="uid://cci83x3jn7yo6" path="res://levels/scenes/object_terrain.tscn" id="3_c28i5"]
 [ext_resource type="PackedScene" uid="uid://cnqtujkg81lid" path="res://world/components/door/scenes/door_component.tscn" id="5_5medl"]
@@ -43,10 +42,6 @@ _teleport_position = Vector2(660, 304)
 [node name="YSort" type="Node2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-
-[node name="Character" parent="YSort" instance=ExtResource("2_l4est")]
-position = Vector2(648, 312)
-_life_max = 500.0
 
 [node name="ObjectTerrain" parent="YSort" instance=ExtResource("3_c28i5")]
 layer_0/tile_data = PackedInt32Array(589852, 0, 5, 589854, 0, 5, 786460, 0, 5, 786462, 0, 5, -131028, 0, 5, -65492, 1, 0, 524319, 1, 0, 1048579, 655360, 7, 196602, 655360, 7, 327684, 0, 0, 1114134, 0, 0, 1376287, 0, 1, 1179660, 0, 1, 1441785, 0, 1, 786452, 0, 1, 22, 0, 1, 9, 0, 1, -131071, 0, 1, 196651, 0, 1, 196652, 0, 1, 44, 0, 1, -6, 0, 5, 1048581, 0, 5, 1048577, 0, 5, 983043, 0, 5, 1179649, 0, 5, 1179653, 0, 5, 1310721, 0, 5, 1310725, 0, 5, 1114115, 1, 0)

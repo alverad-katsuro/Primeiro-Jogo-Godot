@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dndjdakyrtr7g"]
+[gd_scene load_steps=44 format=3 uid="uid://dndjdakyrtr7g"]
 
 [ext_resource type="Script" path="res://character/scripts/character.gd" id="1_7th4x"]
 [ext_resource type="Texture2D" uid="uid://b4ub5ko7pu011" path="res://character/assets/player.png" id="2_5wkbj"]
@@ -868,7 +868,22 @@ states/walk/node = SubResource("AnimationNodeBlendSpace2D_nu62v")
 states/walk/position = Vector2(490, 203)
 graph_offset = Vector2(3, 36)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_y521t"]
+properties/0/path = NodePath(".:_life_max")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+properties/2/path = NodePath(".:peer_id")
+properties/2/spawn = true
+properties/2/sync = true
+properties/2/watch = false
+
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree", "_barra_de_vida") groups=["character"]]
+z_index = 5
 script = ExtResource("1_7th4x")
 _animation_tree = NodePath("AnimationTree")
 _barra_de_vida = NodePath("TextureProgressBar")
@@ -913,6 +928,9 @@ offset_bottom = -20.0
 scale = Vector2(0.5157, 0.778507)
 texture_under = ExtResource("3_7pyth")
 texture_progress = ExtResource("4_eabg1")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_y521t")
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

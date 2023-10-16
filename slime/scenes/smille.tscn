@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://coe32riswx30a"]
+[gd_scene load_steps=13 format=3 uid="uid://coe32riswx30a"]
 
 [ext_resource type="Script" path="res://slime/smille.gd" id="1_c4isn"]
 [ext_resource type="Texture2D" uid="uid://c5tomdlunkx4d" path="res://slime/assets/slime.png" id="1_cdf0v"]
@@ -106,6 +106,24 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_umcnm"]
 radius = 61.131
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_thqm5"]
+properties/0/path = NodePath(".:peer_id")
+properties/0/spawn = true
+properties/0/sync = true
+properties/0/watch = false
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/sync = true
+properties/1/watch = false
+properties/2/path = NodePath("TextureProgressBar:value")
+properties/2/spawn = true
+properties/2/sync = true
+properties/2/watch = false
+properties/3/path = NodePath("AnimationPlayer:current_animation")
+properties/3/spawn = true
+properties/3/sync = true
+properties/3/watch = false
+
 [node name="Smille" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation", "_barra_de_vida") groups=["enemy"]]
 script = ExtResource("1_c4isn")
 _texture = NodePath("Sprite2D")
@@ -143,6 +161,9 @@ offset_bottom = -16.0
 scale = Vector2(0.5157, 0.778507)
 texture_under = ExtResource("3_sccr6")
 texture_progress = ExtResource("4_tkyjw")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_thqm5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered_alert"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited_alert"]
