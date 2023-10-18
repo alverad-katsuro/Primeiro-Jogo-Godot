@@ -16,9 +16,9 @@ func _ready():
 	menu = preload("res://menu/menu.tscn").instantiate()
 	main.add_child(menu)
 	
-	# if multiplayer.is_server():
-	multiplayer.peer_connected.connect(spawn_player)
-	multiplayer.peer_disconnected.connect(remove_player)
+	if multiplayer.is_server():
+		multiplayer.peer_connected.connect(spawn_player)
+		multiplayer.peer_disconnected.connect(remove_player)
 
 func load_map():
 	# Free old stuff.

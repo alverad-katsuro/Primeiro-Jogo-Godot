@@ -49,21 +49,4 @@ layer_0/tile_data = PackedInt32Array(589852, 0, 5, 589854, 0, 5, 786460, 0, 5, 7
 [node name="Enemys" type="Node2D" parent="YSort"]
 
 [node name="Smille" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
-position = Vector2(658, 373)
-
-[node name="Smille2" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
-position = Vector2(213, 155)
-
-[node name="Smille3" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
-
-[node name="Smille4" parent="YSort/Enemys" instance=ExtResource("6_eq2b3")]
-position = Vector2(-39, 340)
-
-[node name="Smille" parent="." instance=ExtResource("6_eq2b3")]
-position = Vector2(55, 154)
-
-[node name="Smille" parent="Smille" instance=ExtResource("6_eq2b3")]
-position = Vector2(302, 220)
-
-[node name="Smille" parent="Smille/Smille" instance=ExtResource("6_eq2b3")]
-position = Vector2(274, -252)
+position = Vector2(166, 122)

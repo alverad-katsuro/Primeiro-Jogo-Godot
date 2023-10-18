@@ -881,6 +881,22 @@ properties/2/path = NodePath(".:peer_id")
 properties/2/spawn = true
 properties/2/sync = true
 properties/2/watch = false
+properties/3/path = NodePath("Texture:frame")
+properties/3/spawn = true
+properties/3/sync = true
+properties/3/watch = false
+properties/4/path = NodePath("Texture:flip_h")
+properties/4/spawn = true
+properties/4/sync = true
+properties/4/watch = false
+properties/5/path = NodePath(".:_life")
+properties/5/spawn = true
+properties/5/sync = true
+properties/5/watch = false
+properties/6/path = NodePath("TextureProgressBar:value")
+properties/6/spawn = true
+properties/6/sync = true
+properties/6/watch = false
 
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_animation_tree", "_barra_de_vida") groups=["character"]]
 z_index = 5

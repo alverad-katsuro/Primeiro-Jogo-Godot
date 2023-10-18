@@ -19,7 +19,7 @@ var _is_attack = false
 @export var _attack_weapon: Array = [1,50]
 @export var _life_max: float = 1000.0;
 
-var _life: float = 1000.0;
+@export var _life: float = 1000.0;
 
 
 @export_category("Objects")

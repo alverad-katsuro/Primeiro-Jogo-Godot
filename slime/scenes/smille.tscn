@@ -109,20 +109,32 @@ radius = 61.131
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_thqm5"]
 properties/0/path = NodePath(".:peer_id")
 properties/0/spawn = true
-properties/0/sync = true
+properties/0/sync = false
 properties/0/watch = false
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/sync = true
 properties/1/watch = false
-properties/2/path = NodePath("TextureProgressBar:value")
+properties/2/path = NodePath("Sprite2D:frame")
 properties/2/spawn = true
 properties/2/sync = true
 properties/2/watch = false
-properties/3/path = NodePath("AnimationPlayer:current_animation")
+properties/3/path = NodePath("Sprite2D:flip_h")
 properties/3/spawn = true
 properties/3/sync = true
 properties/3/watch = false
+properties/4/path = NodePath(".:_life")
+properties/4/spawn = true
+properties/4/sync = false
+properties/4/watch = true
+properties/5/path = NodePath("TextureProgressBar:value")
+properties/5/spawn = true
+properties/5/sync = false
+properties/5/watch = true
+properties/6/path = NodePath("TextureProgressBar:visible")
+properties/6/spawn = true
+properties/6/sync = false
+properties/6/watch = true
 
 [node name="Smille" type="CharacterBody2D" node_paths=PackedStringArray("_texture", "_animation", "_barra_de_vida") groups=["enemy"]]
 script = ExtResource("1_c4isn")

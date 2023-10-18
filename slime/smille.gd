@@ -25,7 +25,7 @@ var _player_ref: Character = null
 
 @export var _attack_weapon: Array = [1,5]
 @export var _life_max: float = 100.0;
-var _life: float = 100.0;
+@export var _life: float = 100.0;
 
 func _ready():
 	_life = _life_max
@@ -39,7 +39,7 @@ func _ready():
 	set_process(is_local)
 
 func _on_area_2d_body_entered_alert(_body: Node2D):
-	if _body.is_in_group("character"):
+	if _body.is_in_group("character") and _player_ref != null:
 		_player_ref = _body
 
 
